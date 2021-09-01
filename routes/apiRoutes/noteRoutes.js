@@ -2,8 +2,14 @@ const router = require('express').Router();
 const {notes} = require('../../db/db.json');
 const path = require('path');
 const fs = require('fs');
+const generateUniqueId = require('generate-unique-id');
 
 function createNewNote(note, noteList = []){
+    const id = generateUniqueId({
+        useLetters: false
+    });
+
+    note.id = id;
     noteList.push(note);
 
     fs.writeFileSync(
