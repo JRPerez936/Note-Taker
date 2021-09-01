@@ -3,7 +3,7 @@ const {notes} = require('../../db/db.json');
 const path = require('path');
 const fs = require('fs');
 
-function createNewNote(note, noteList){
+function createNewNote(note, noteList = []){
     noteList.push(note);
 
     fs.writeFileSync(
