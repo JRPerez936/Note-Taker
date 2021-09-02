@@ -6,6 +6,7 @@ const generateUniqueId = require('generate-unique-id');
 
 function createNewNote(note, noteList = []){
     const id = generateUniqueId({
+        length: 3,
         useLetters: false
     });
 
